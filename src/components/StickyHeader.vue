@@ -1,12 +1,11 @@
 <template lang="pug">
-  .wrapper(id="wrapper")
-    header.header(id="header")
-      .container
-        .logo(id="logo") Carusel SPA
-        nav.navbar
-          a(href="#").nav__item Home
-          a(href="#").nav__item About US
-          a(href="#").nav__item Contact Us
+  header.header(id="header")
+    .container
+      .logo(id="logo") Carusel SPA
+      nav.navbar
+        a(href="#").nav__item Home
+        a(href="#").nav__item About US
+        a(href="#").nav__item Contact Us
 </template>
 
 <script>
@@ -31,15 +30,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    min-height: 2000px;
-  }
-
 .header {
   width: 100%;
   height: 80px;
@@ -54,10 +44,10 @@ export default {
     height: 50px;
     line-height: 50px;
     & .logo {
-      font-size: 1.5rem;
+      font-size: 25px;
     }
     & .nav__item {
-      font-size: 0.9rem;
+      font-size: 15px;
     }
   }
 }
