@@ -54,10 +54,10 @@ export default {
     height: 50px;
     line-height: 50px;
     & .logo {
-      font-size: 22px;
+      font-size: 1.5rem;
     }
     & .nav__item {
-      font-size: 14px;
+      font-size: 0.9rem;
     }
   }
 }
@@ -69,17 +69,17 @@ export default {
 }
 
 .logo {
-  font-family: oswald;
+  font-family: 'Oswald', sans-serif;
   font-size: 40px;
   float: left;
 }
 
 .navbar {
   float: right;
-  font-family: Helvetica;
 }
 
 .nav__item {
+  font-size: 22px;
   color: #ffffff;
   text-decoration: none;
   margin: 0 15px;
