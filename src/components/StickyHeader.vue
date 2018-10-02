@@ -3,9 +3,9 @@
     .container
       .logo(id="logo") Carusel SPA
       nav.navbar
-        a(href="#").nav__item Home
-        a(href="#").nav__item About US
-        a(href="#").nav__item Contact Us
+        router-link.nav__item(to="/") Home
+        router-link.nav__item(to="/about") About US
+        router-link.nav__item(to="/contact") Contact Us
 </template>
 
 <script>
@@ -74,6 +74,9 @@ export default {
   text-decoration: none;
   margin: 0 15px;
   &:hover {
+    color: #fbce2a;
+  }
+  &.router-link-exact-active {
     color: #fbce2a;
   }
 }
