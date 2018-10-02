@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Hi />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -7,6 +8,16 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+import Hi from './components/Hi'
+export default {
+  components: {
+    Hi
+  }
+}
+</script>
+
 
 <style lang="scss">
 #app {
