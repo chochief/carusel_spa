@@ -37,6 +37,7 @@ export default {
   color: #ffffff;
   line-height: 80px;
   position: fixed;
+  z-index: 100;
   top: 0;
   transition: all 0.5s ease;
   &.sticky {
@@ -62,6 +63,7 @@ export default {
   font-family: 'Oswald', sans-serif;
   font-size: 40px;
   float: left;
+  margin: 0 10px;
 }
 
 .navbar {

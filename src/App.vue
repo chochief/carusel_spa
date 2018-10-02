@@ -1,4 +1,4 @@
-<template  lang="pug">
+<template lang="pug">
   .wrap(id="app")
     sticky-header
     .content
@@ -32,6 +32,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   // text-align: center;
   color: #2c3e50;
+  overflow-y: scroll;
 }
 
 .wrap {
