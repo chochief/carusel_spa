@@ -1,10 +1,7 @@
 <template  lang="pug">
   .wrap(id="app")
+    sticky-header
     .content
-      sticky-header
-      div(id="nav")
-        router-link(to="/") Home
-        router-link(to="/about") About
       router-view
     footer.footer Hi! It's the Carusel SPA
 </template>
@@ -45,8 +42,10 @@ body {
 
 .content {
   flex: 1 0 auto;
-  min-height: 2000px;
   overflow: hidden;
+  margin: 80px 0;
+  padding: 30px;
+  // min-height: 2000px;
 }
 
 .footer {
@@ -57,17 +56,5 @@ body {
   text-align: center;
   color: white;
   line-height: 40px;
-}
-
-#nav {
-  margin: 80px 0;
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>
