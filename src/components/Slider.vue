@@ -8,8 +8,8 @@
         v-for="slide in slides"
         :style="slideStyle"
       )
-    a(href="#" id="prev" @click="prevSlider") &#8810
-    a(href="#" id="next" @click="nextSlider") &#8811
+    div(id="prev" @click="prevSlider") &#8810
+    div(id="next" @click="nextSlider") &#8811
 </template>
 
 <script>
@@ -87,7 +87,7 @@ $color6: deeppink;
   height: 250px;
   overflow: hidden;
   box-shadow: 0 0 3px rgba(0,0,0,0.3);
-  margin: 60px 10px -10px;
+  margin: 60px 10px;
   border-radius: 4px;
 }
 
@@ -146,6 +146,7 @@ ul {
   top: 50%;
   transform: translateY(-50%);
   transition: all 150ms ease;
+  cursor: pointer;
 
   &:hover {
     background-color: rgba(0,0,0,0.1);

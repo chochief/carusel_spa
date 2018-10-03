@@ -17,7 +17,7 @@
 export default {
   data () {
     return {
-      name: 'Bruce',
+      name: 'Bruce Lee',
       nameLabel: 'Write your name',
       phone: '+7 555 55 55',
       phoneLabel: 'Enter your phone number',

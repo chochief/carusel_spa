@@ -54,10 +54,65 @@ body {
 .footer {
   flex: 0 0 auto;
   width: 100%;
-  height: 40px;
+  height: 60px;
   background-color: #2c3e50;
   text-align: center;
   color: white;
-  line-height: 40px;
+  line-height: 60px;
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  margin: 24px 10px;
+  padding: 64px 32px;
+  border-radius: 4px;
+  border: 1px dashed #e9ecef;
+  // background-color: #e9ecef;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 56px;
+  line-height: 1.2;
+  margin: 22px 0
+}
+
+.lead {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.hr {
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.1);
+  margin: 20px 0;
+}
+
+.text {
+  margin-bottom: 16px;
+}
+
+.btn {
+  position: relative;
+  z-index: 1;
+  margin-right: 10px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #335185;
+  color: white;
+  outline: none;
+  border: 0;
+  font-size: 22px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: #fbce2a;
+  }
+
+  &:focus {
+    top: 2px;
+  }
 }
 </style>
