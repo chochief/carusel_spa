@@ -45,7 +45,7 @@ body {
 .content {
   flex: 1 0 auto;
   overflow: hidden;
-  margin: 80px auto;
+  margin: 80px auto 50px;
   max-width: 1024px;
   padding: 30px;
   // min-height: 2000px;

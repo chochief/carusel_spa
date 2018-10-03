@@ -1,18 +1,21 @@
 <template lang="pug">
   .home
     jumbotron(:content="content")
-    img(alt="Vue logo" src="../assets/logo.png")
-    hello-world(msg="Welcome to Your Vue.js App")
+    slider
+    //- img(alt="Vue logo" src="../assets/logo.png")
+    //- hello-world(msg="Welcome to Your Vue.js App")
 </template>
 
 <script>
 import Jumbotron from '@/components/Jumbotron'
-import HelloWorld from '@/components/HelloWorld.vue'
+import Slider from '@/components/Slider'
+// import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
+    Slider,
+    // HelloWorld,
     Jumbotron
   },
   data () {
