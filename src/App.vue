@@ -3,7 +3,7 @@
     sticky-header
     .content
       router-view
-    footer.footer Hi! It's the Carusel SPA
+    footer.footer Hi! We present you the Carousel SPA
 </template>
 
 <script>
@@ -33,6 +33,7 @@ body {
   // text-align: center;
   color: #2c3e50;
   overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 .wrap {

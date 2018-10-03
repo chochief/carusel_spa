@@ -17,6 +17,7 @@ export default {
 <style lang="scss" scoped>
 .jumbotron {
   position: relative;
+  z-index: 1;
   margin: 24px 10px;
   padding: 64px 32px;
   border-radius: 4px;
