@@ -1,5 +1,8 @@
 # carusel_spa
 
+## See on Github Pages
+https://chochief.github.io/carusel_spa/
+
 ## Project setup
 ```
 npm install
@@ -24,3 +27,9 @@ npm run test
 ```
 npm run lint
 ```
+
+## Dist
+
+`serve -s dist`
+
+https://cli.vuejs.org/ru/guide/deployment.html#общие-рекомендации
