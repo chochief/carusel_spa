@@ -1,5 +1,9 @@
 <template lang="pug">
-  .slider(id="slider")
+  .slider(
+    id="slider"
+    @mousedown="startDrag"
+    @mousemove="doDrag"
+  )
     ul(
       id="sliderWrap"
       :style="sliderStyle"
@@ -14,10 +18,6 @@
 
 <script>
 export default {
-  mounted () {
-    window.addEventListener('resize', this.getSliderWidth)
-    this.getSliderWidth()
-  },
   methods: {
     getSliderWidth () {
       const slider = document.getElementById('slider')
@@ -31,17 +31,43 @@ export default {
       } else {
         this.count = this.items - 1 - 2
       }
-      this.sliderStyle.left = `-${this.count * this.slideWidth}px`
+      this.offset = -(this.count * this.slideWidth)
+      this.sliderStyle.left = `${this.offset}px`
       this.count++
     },
     nextSlider () {
       if (this.count < this.items - 2) {
-        this.sliderStyle.left = `-${this.count * this.slideWidth}px`
+        this.offset = -(this.count * this.slideWidth)
+        this.sliderStyle.left = `${this.offset}px`
         this.count++
       } else {
-        this.sliderStyle.left = '0px'
+        this.offset = 0
+        this.sliderStyle.left = `${this.offset}px`
         this.count = 1
       }
+    },
+    startDrag () {
+      this.dragging = true
+      this.x = 0
+      // this.y = 0
+    },
+    doDrag (e) {
+      if (this.dragging) {
+        // this.x = e.clientX
+        let diff = this.x - e.clientX
+        // this.y = e.clientY
+        let sum = this.offset + diff * 10
+        this.x = e.clientX
+        // console.log(this.x, sum)
+        this.sliderStyle.left = `-${sum}px`
+        // this.sliderStyle.left = `-${this.count * this.sliderWidth + diff}px`
+      }
+    },
+    stopDrag () {
+      this.dragging = false
+      // this.x = 'no'
+      // this.y = 'no'
+      console.log('this.dragging', this.x)
     }
   },
   data () {
@@ -49,6 +75,7 @@ export default {
       sliderWidth: 0,
       slideWidth: 0,
       count: 1,
+      offset: 0,
       slides: [
         { src: '' },
         { src: '' },
@@ -62,13 +89,21 @@ export default {
       },
       slideStyle: {
         width: '0px'
-      }
+      },
+      dragging: false,
+      x: 'no',
+      y: 'no'
     }
   },
   computed: {
     items () {
       return this.slides.length
     }
+  },
+  mounted () {
+    window.addEventListener('resize', this.getSliderWidth)
+    this.getSliderWidth()
+    window.addEventListener('mouseup', this.stopDrag)
   }
 }
 </script>
