@@ -1,5 +1,7 @@
 <template lang="pug">
-  header.header(id="header")
+  header.header(
+    :class="{ sticky: sticky }"
+  )
     .container
       .logo(id="logo") Carusel SPA
       nav.navbar
@@ -10,14 +12,14 @@
 
 <script>
 export default {
+  data () {
+    return {
+      sticky: false
+    }
+  },
   methods: {
     handleScroll () {
-      let header = document.getElementById('header')
-      if (window.scrollY > 1) {
-        header.classList.add('sticky')
-      } else {
-        header.classList.remove('sticky')
-      }
+      this.sticky = window.scrollY > 1
     }
   },
   created () {
