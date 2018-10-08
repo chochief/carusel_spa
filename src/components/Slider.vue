@@ -3,6 +3,7 @@
     id="slider"
     @mousedown="startDrag"
     @mousemove="doDrag"
+    @mouseup="stopDrag"
   )
     ul(
       id="sliderWrap"
@@ -18,6 +19,32 @@
 
 <script>
 export default {
+  data () {
+    return {
+      sliderWidth: 0,
+      slideWidth: 0,
+      count: 1,
+      offset: 0,
+      slides: [
+        { src: '' },
+        { src: '' },
+        { src: '' },
+        { src: '' },
+        { src: '' },
+        { src: '' }
+      ],
+      sliderStyle: {
+        left: '0px'
+      },
+      slideStyle: {
+        width: '0px'
+      },
+      dragging: false,
+      x: 'no',
+      y: 'no',
+      left: 0
+    }
+  },
   methods: {
     getSliderWidth () {
       const slider = document.getElementById('slider')
@@ -46,53 +73,41 @@ export default {
         this.count = 1
       }
     },
-    startDrag () {
+    startDrag (e) {
       this.dragging = true
-      this.x = 0
+      this.left = e.clientX
+      console.log(this.x)
       // this.y = 0
     },
     doDrag (e) {
       if (this.dragging) {
+        // let diff = this.x - e.clientX
+        let diff = this.left - e.clientX
+        // if (diff > 0) {
+        //   this.nextSlider()
+        // } else {
+        //   this.prevSlider()
+        // }
+        // emit('mousestop')
+        console.log(e.clientX, diff)
+        this.sliderStyle.left = `-${diff}px`
+        // this.sliderStyle.left = `-${this.x - e.clientX}px`
+        // // this.x = e.clientX
+        // let diff = this.x - e.clientX
+        // // this.y = e.clientY
+        // let sum = this.offset + diff * 10
         // this.x = e.clientX
-        let diff = this.x - e.clientX
-        // this.y = e.clientY
-        let sum = this.offset + diff * 10
-        this.x = e.clientX
-        // console.log(this.x, sum)
-        this.sliderStyle.left = `-${sum}px`
-        // this.sliderStyle.left = `-${this.count * this.sliderWidth + diff}px`
+        // // console.log(this.x, sum)
+        // this.sliderStyle.left = `-${sum}px`
+        // // this.sliderStyle.left = `-${this.count * this.sliderWidth + diff}px`
       }
     },
     stopDrag () {
       this.dragging = false
+      this.x = 0
       // this.x = 'no'
       // this.y = 'no'
       console.log('this.dragging', this.x)
-    }
-  },
-  data () {
-    return {
-      sliderWidth: 0,
-      slideWidth: 0,
-      count: 1,
-      offset: 0,
-      slides: [
-        { src: '' },
-        { src: '' },
-        { src: '' },
-        { src: '' },
-        { src: '' },
-        { src: '' }
-      ],
-      sliderStyle: {
-        left: '0px'
-      },
-      slideStyle: {
-        width: '0px'
-      },
-      dragging: false,
-      x: 'no',
-      y: 'no'
     }
   },
   computed: {
@@ -134,7 +149,7 @@ ul {
   width: 9999%;
   padding: 0;
   margin: 0;
-  transition: all 750ms ease;
+  // transition: all 750ms ease;
   left: 0;
   font-size: 0;
 
