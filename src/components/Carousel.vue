@@ -17,6 +17,8 @@
     swiper-slide Slide 9
     swiper-slide Slide 10
     .swiper-pagination(slot="pagination")
+    .swiper-button-prev(slot="button-prev")
+    .swiper-button-next(slot="button-next")
 </template>
 
 <script>
@@ -36,9 +38,20 @@ export default {
       swiperOption: {
         slidesPerView: 3,
         spaceBetween: 10,
+        grabCursor: true,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true
+          // type: 'progressbar'
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
         }
       }
     }
@@ -56,7 +69,11 @@ export default {
   background-color: #f4f4f4;
   // padding: 10px;
   box-sizing: border-box;
-  cursor: pointer;
+  // cursor: pointer;
   border-radius: 4px;
+}
+
+.swiper-pagination {
+  margin-top: 4px;
 }
 </style>

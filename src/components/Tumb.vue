@@ -1,9 +1,11 @@
 <template lang="pug">
-  a.tumb(
-    :href="href"
-    target="_blank"
-    :style="style"
-  )
+  div
+    a.tumb(
+      :href="href"
+      target="_blank"
+      :style="style"
+    )
+    .lead Hello
 </template>
 
 <script>
